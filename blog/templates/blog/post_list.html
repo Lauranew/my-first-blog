@@ -6,20 +6,13 @@
 	    <div>
 		    <h1><a href="">Artograph: i dipinti degli attori</a></h1>
 		</div>
-		<div>
-            <p>published: 12.12.2015, 12:08</p>
-			<h2><a href="">Primo post</a></h2>
-			<p>oojjjdaj djoijoijda dajoijoad ioijo daooiijoijad oijdaoijo daoijjo</p>
-		</div>
-		<div>
-            <p>published: 12.12.2015, 12:08</p>
-			<h2><a href="">Secondo post</a></h2>
-			<p>oojjjdaj djoijoijda dajoijoad ioijo daooiijoijad oijdaoijo daoijjo</p>
-		</div>
-		<div>
-            <p>published: 12.12.2015, 12:08</p>
-			<h2><a href="">Terzo post</a></h2>
-			<p>oojjjdaj djoijoijda dajoijoad ioijo daooiijoijad oijdaoijo daoijjo</p>
-		</div>
+		{% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
+
 	</body>	
 </html>
